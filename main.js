@@ -18,16 +18,15 @@ fontsize.addEventListener('input', (event) => {
 })
 
 const buttonCheck = document.getElementById('WWcheckbox');
-buttonCheck.addEventListener('change', (event) => {
-    if (event.target.checked) {
+buttonCheck.addEventListener('click', () => {
+    if (!document.body.classList.contains('word-wrap')) {
         document.body.classList.add('word-wrap');
+        buttonCheck.setAttribute('disabled', true);
         runParser();
-    }
-    else {
+    } else {
         document.body.classList.remove('word-wrap');
-        
     }
-})
+});
 
 
 /* const end = performance.now(); // End timing
