@@ -7,11 +7,17 @@ import {loadDefaultJapaneseParser} from "budoux";
  * Then, it runs the parser on the element.
  */
 function runParser() {
-    console.log("APPLIED parser")
+    console.log("APPLIED parser");
+
+
   const parser = loadDefaultJapaneseParser();
+  
   const ele = document.querySelector("body");
 
   parser.applyToElement(ele);
+  console.log("parsed");
+
+
 }
 
 const fontsize = document.getElementById('fontsize');
