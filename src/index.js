@@ -1,37 +1,38 @@
-/* const start = performance.now(); // Start timing
+import {loadDefaultJapaneseParser} from "budoux";
+
+
+/**
+ * Applies the Japanese parser to the element with class "word-wrap".
+ * First, it stores the original text of the element in the data attribute "originalText".
+ * Then, it runs the parser on the element.
  */
-
-import { loadDefaultJapaneseParser } from "budoux";
 function runParser() {
-
+    console.log("APPLIED parser")
   const parser = loadDefaultJapaneseParser();
-  const ele = document.querySelector(".word-wrap");
-  ele.dataset.originalText = ele.innerHTML;
+  const ele = document.querySelector("body");
 
   parser.applyToElement(ele);
 }
 
 const fontsize = document.getElementById('fontsize');
 fontsize.addEventListener('input', (event) => {
-    const main = document.querySelector('main');
+    const main = document.querySelector('body');
     main.style.fontSize = `${event.target.value}rem`;
 })
 
 const buttonCheck = document.getElementById('WWcheckbox');
 buttonCheck.addEventListener('click', () => {
-    if (!document.body.classList.contains('word-wrap')) {
-        document.body.classList.add('word-wrap');
-        buttonCheck.setAttribute('disabled', true);
-        runParser();
-    } else {
-        document.body.classList.remove('word-wrap');
-    }
-});
+        try { runParser(); }
 
-const selectCSS = document.getElementById('selectCSS'); 
+        catch (e) { console.error("error: " + e); }
+
+         finally { buttonCheck.classList.add('disabled'); } 
+    });
+
+/* const selectCSS = document.getElementById('selectCSS'); 
 const p = document.querySelector('p');
 selectCSS.addEventListener('change', () => {
     const lineBreakVal = selectCSS.value;
     p.className = `break-${lineBreakVal}`;
     console.log(document.body.style)
-});
+}); */
