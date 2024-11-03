@@ -7,9 +7,27 @@
     <title>Vite App</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
+
+    <style>
+      .break-normal {
+        line-break: normal;
+      }
+
+      .break-strict {
+        line-break: strict;
+      }
+
+      .break-loose {
+        line-break: loose;
+      }
+
+      .break-any {
+        line-break: any;
+      }
+
+
+    </style>
   </head>
-
-
   <body>
     <header class="bg-white shadow">
       <div class="max-w-6xl mx-auto px-4 py-6">
@@ -18,8 +36,17 @@
             <input type="button" class="p-2 mb-2 bg-blue-700 text-white disabled:opacity-50 rounded-lg cursor-pointer disabled:cursor-not-allowed" id="WWcheckbox" value="Activate Word-Wrap"> 
             <hr>
 
+          <div class="form-item my-5" >
+            <select id="selectCSS">
+              <option value="normal">normal</option>
+              <option value="strict">strict</option>
+              <option value="loose">loose</option>
+              <option value="any">any</option>
+            </select>
+            <hr>
+
             <label for="fontsize">Font size</label>
-            <input type="range" id="fontsize" min="1" max="3" step="0.1" value="1">
+            <input type="range" id="fontsize" min="1" max="2" step="0.01" value="1">
           </div>
       </div>
   </header>
@@ -74,6 +101,7 @@
             <span class="bg-green-200">役割を</span>
             <span class="bg-yellow-200">果たしています。</span>
         </p>
+
         <p>
             <span class="bg-blue-200">Sea</span>
             <span class="bg-green-200">small</span>

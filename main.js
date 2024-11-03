@@ -28,6 +28,10 @@ buttonCheck.addEventListener('click', () => {
     }
 });
 
-
-/* const end = performance.now(); // End timing
-console.log(`Execution time: ${end - start} milliseconds`); // Log the time taken */
+const selectCSS = document.getElementById('selectCSS'); 
+const p = document.querySelector('p');
+selectCSS.addEventListener('change', () => {
+    const lineBreakVal = selectCSS.value;
+    p.className = `break-${lineBreakVal}`;
+    console.log(document.body.style)
+});
