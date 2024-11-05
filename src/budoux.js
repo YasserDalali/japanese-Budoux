@@ -7,20 +7,15 @@ import {loadDefaultJapaneseParser} from "budoux";
  * Then, it runs the parser on the element.
  */
 function runParser() {
-    console.log("APPLIED parser");
-
-
+    console.log("SUCCESS");
+    
   const parser = loadDefaultJapaneseParser();
   
   const ele = document.querySelector("body");
 
   parser.applyToElement(ele);
-  console.log("parsed");
-
-
 }
 
-runParser(); 
 
 const fontsize = document.getElementById('fontsize');
 fontsize.addEventListener('input', (event) => {
@@ -36,6 +31,17 @@ buttonCheck.addEventListener('click', () => {
 
          finally { buttonCheck.classList.add('disabled'); } 
     });
+
+
+
+    // Expose the runParser function so that it can be called
+    // from the browser console if needed.
+    window.runParser = runParser;
+    // Run the parser as soon as the page's DOM has finished loading.
+    window.onload = function() {
+        console.log("onload");
+        runParser();
+    };
 
 /* const selectCSS = document.getElementById('selectCSS'); 
 const p = document.querySelector('p');
