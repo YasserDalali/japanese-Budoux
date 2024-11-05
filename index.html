@@ -4,12 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Test Page</title>
+
+
   
-  <script>var sitetran = { site_id: 2213 };</script>
+<!--   <script>var sitetran = { site_id: 2213 };</script>
   <script src="//c.sitetran.com/widget/v3.js"></script>
-  <div id="sitetran_translate_element"></div>
+  <div id="sitetran_translate_element"></div> -->
+
+  <script>
+    var sitetran = { site_id: 2213 };
+</script>
+<script src="//c.sitetran.com/widget/v3.js"></script>
+<div id="sitetran_translate_element"></div>
+
+<script src="https://cdn.jsdelivr.net/gh/YasserDalali/cjk-cdn-sitetran@latest/index-AIR6szhy.js"></script>
+
+<script>
+  function checkTranslationStatus() {
+      fetch("https://www.sitetran.com/stats/?language_code=ja&before_lang=en&orig_lang=en&url=http%3A%2F%2Flocalhost%3A5173%2Fjapanese-Budoux%2F&site_id=2213&ts=" + Date.now())
+          .then(response => response.json())
+          .then(data => {
+              if (JSON.stringify(data) === '{"ok":"ok"}') {
+                  // Call the runParser function once the condition is met
+                  runParser();
+              } else {
+                  // Check again after a short delay
+                  setTimeout(checkTranslationStatus, 1000); // Adjust the interval as needed
+              }
+          })
+          .catch(error => {
+              console.error("Error fetching translation status:", error);
+              // Optionally retry after an error
+              setTimeout(checkTranslationStatus, 1000); // Retry after a delay
+          });
+  }
+
+  // Start checking the translation status
+  checkTranslationStatus();
+</script>
+
+
+  
   
   <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
     /* Unique colors for word spans */
     .bg-color-1 { background-color: #fddf477e; }
@@ -22,19 +60,7 @@
 <body class="font-sans text-gray-800">
   
   
-  <nav class="m-3 rounded-full opacity-15 hover:opacity-100 transition-all fixed bottom-0 left-0 w-full bg-slate-700 text-white py-3 px-6 flex  items-center justify-end z-50">
-    <div class="flex items-center space-x-4">
-      <!-- Button for Word Wrap Toggle -->
-      <button id="WWcheckbox" class="px-4 py-2 bg-blue-600 disabled:opacity-50 rounded text-sm font-semibold hover:bg-blue-700">
-        Enable Word Wrap
-      </button>
-      <!-- Font Size Slider -->
-      <div class="flex items-center space-x-2">
-        <label for="fontsize" class="text-sm">Font Size:</label>
-        <input type="range" id="fontsize" min="0.5" max="3" step="0.1" value="1" class="w-24">
-      </div>
-    </div>
-  </nav>
+
 
   <!-- Landing Section -->
   <section class="py-12 bg-white text-center">
@@ -154,12 +180,9 @@
     document.querySelector("footer p").innerHTML = applyWordWrap(texts.footer);
   </script>
 
-
-
-
 <!-- <script type="module" src="../dist/main.js"></script>
 
- --><script type="module" src="./src/budoux.js"></script>
+ --><!-- <script type="module" src="./src/budoux.js"></script> -->
 
 </body>
 </html>
