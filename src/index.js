@@ -20,6 +20,8 @@ function runParser() {
 
 }
 
+runParser(); 
+
 const fontsize = document.getElementById('fontsize');
 fontsize.addEventListener('input', (event) => {
     const main = document.querySelector('body');
