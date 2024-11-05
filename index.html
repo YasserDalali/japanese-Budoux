@@ -1,86 +1,164 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/japanese-Budoux/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <script type="module" crossorigin src="/japanese-Budoux/assets/index-NBoV0ku1.js"></script>
-  </head>
-
-
-  <body>
-    <header class="bg-white shadow">
-      <div class="max-w-6xl mx-auto px-4 py-6">
-          <h1 class="text-3xl font-bold text-gray-800">私のブログ</h1>
-          <hr>
-          <input type="checkbox" id="WWcheckbox"> Activate Word-Wrap
-          <hr>
-          <div class="form-item">
-            <label for="fontsize">Font size</label>
-            <input type="range" id="fontsize" min="1" max="3" step="0.1" value="1">
-          </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Unique colors for word spans */
+    .bg-color-1 { background-color: #fddf477e; }
+    .bg-color-2 { background-color: #34d3977e; }
+    .bg-color-3 { background-color: #fca5a77e; }
+    .bg-color-4 { background-color: #93c5f77e; }
+    .bg-color-5 { background-color: #f9a8d77e; }
+  </style>
+  <script type="module" crossorigin src="/japanese-Budoux/assets/index-BHuYwaym.js"></script>
+</head>
+<body class="font-sans text-gray-800">
+  
+  
+  <nav class="m-3 rounded-full opacity-15 hover:opacity-100 transition-all fixed bottom-0 left-0 w-full bg-slate-700 text-white py-3 px-6 flex  items-center justify-end z-50">
+    <div class="flex items-center space-x-4">
+      <!-- Button for Word Wrap Toggle -->
+      <button id="WWcheckbox" class="px-4 py-2 bg-blue-600 disabled:opacity-50 rounded text-sm font-semibold hover:bg-blue-700">
+        Enable Word Wrap
+      </button>
+      <!-- Font Size Slider -->
+      <div class="flex items-center space-x-2">
+        <label for="fontsize" class="text-sm">Font Size:</label>
+        <input type="range" id="fontsize" min="0.5" max="3" step="0.1" value="1" class="w-24">
       </div>
-  </header>
-  
-  <main class="max-w-6xl mx-auto px-4 py-6">
-    <p>
-        <span style="background-color: lightblue;">ビーバーは</span>
-        <span style="background-color: lightgreen;">非常に</span>
-        <span style="background-color: lightyellow;">興味深い</span>
-        <span style="background-color: lightcoral;">生き物で、</span>
-        <span style="background-color: lightpink;">彼らは</span>
-        <span style="background-color: lightblue;">水辺の</span>
-        <span style="background-color: lightgreen;">環境に</span>
-        <span style="background-color: lightyellow;">特化しています。</span>
-        <span style="background-color: lightcoral;">彼らは</span>
-        <span style="background-color: lightpink;">強力な</span>
-        <span style="background-color: lightblue;">前歯を</span>
-        <span style="background-color: lightgreen;">持っており、</span>
-        <span style="background-color: lightyellow;">木を</span>
-        <span style="background-color: lightcoral;">かじることで</span>
-        <span style="background-color: lightpink;">知られています。</span>
-        <span style="background-color: lightblue;">カピバラは</span>
-        <span style="background-color: lightgreen;">さらに大きな</span>
-        <span style="background-color: lightyellow;">齧歯類で、</span>
-        <span style="background-color: lightcoral;">彼らの体長は</span>
-        <span style="background-color: lightpink;">通常、</span>
-        <span style="background-color: lightblue;">100センチメートルに</span>
-        <span style="background-color: lightgreen;">達します。</span>
-        <span style="background-color: lightyellow;">彼らは</span>
-        <span style="background-color: lightcoral;">社交的な</span>
-        <span style="background-color: lightpink;">動物で、</span>
-        <span style="background-color: lightblue;">群れで</span>
-        <span style="background-color: lightgreen;">生活します。</span>
-        <span style="background-color: lightyellow;">これらの</span>
-        <span style="background-color: lightcoral;">カピバラは</span>
-        <span style="background-color: lightpink;">湿地や</span>
-        <span style="background-color: lightblue;">川の近くに</span>
-        <span style="background-color: lightgreen;">生息し、</span>
-        <span style="background-color: lightyellow;">草食性で</span>
-        <span style="background-color: lightcoral;">草や水草を</span>
-        <span style="background-color: lightpink;">食べます。</span>
-        <span style="background-color: lightblue;">このように、</span>
-        <span style="background-color: lightgreen;">ビーバーや</span>
-        <span style="background-color: lightyellow;">カピバラは、</span>
-        <span style="background-color: lightcoral;">それぞれの</span>
-        <span style="background-color: lightpink;">環境で</span>
-        <span style="background-color: lightblue;">重要な</span>
-        <span style="background-color: lightgreen;">役割を</span>
-        <span style="background-color: lightyellow;">果たしています。</span>
+    </div>
+  </nav>
+
+  <!-- Landing Section -->
+  <section class="py-12 bg-white text-center">
+    <h1 class=" font-bold mb-4">Welcome to Our Landing Page</h1>
+    <p class="max-w-2xl mx-auto">
+      <!-- JavaScript will dynamically insert word-breaking spans here -->
     </p>
-    
-    
-    
-      <hr>
+  </section>
 
-  </main>
-  
+  <!-- Blog Section -->
+  <section class="py-12 bg-gray-100 text-left">
+    <h2 class="text-2xl font-semibold mb-6 text-center">Latest Blog Posts</h2>
+    <div class="max-w-2xl mx-auto space-y-8">
+      <article>
+        <h3 class="text-xl font-semibold">First Blog Post</h3>
+        <p></p>
+      </article>
+      <article>
+        <h3 class="text-xl font-semibold">Second Blog Post</h3>
+        <p></p>
+      </article>
+    </div>
+  </section>
 
-  </body>
+  <!-- Catalog Section -->
+
+  <section class=" bg-white text-center">
+    <h2 class="text-2xl font-semibold mb-6">Product Catalog</h2>
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div class="p-4 border">
+        <h4 class="font-semibold">Product Name</h4>
+        <p></p>
+        <span class="block font-semibold">$91.99</span>
+      </div>
+      <div class="p-4 border">
+        <h4 class="font-semibold">Product Name</h4>
+        <p></p>
+        <span class="block font-semibold">$91.99</span>
+      </div>
+      <div class="p-4 border">
+        <h4 class="font-semibold">Product Name</h4>
+        <p></p>
+        <span class="block font-semibold">$91.99</span>
+      </div>
+      <div class="p-4 border">
+        <h4 class="font-semibold">Product Name</h4>
+        <p></p>
+        <span class="block font-semibold">$91.99</span>
+      </div>
+    </div>
+  </section>
 
 
+
+  <!-- Form Section -->
+  <section class="py-12 bg-gray-100 text-center">
+    <h2 class="text-2xl font-semibold mb-6">Contact Us</h2>
+    <form class="max-w-md mx-auto space-y-4">
+      <div>
+        <label for="name" class="block text-left">Name</label>
+        <input type="text" id="name" class="w-full p-2 border" />
+      </div>
+      <div>
+        <label for="email" class="block text-left">Email</label>
+        <input type="email" id="email" class="w-full p-2 border" />
+      </div>
+      <div>
+        <label for="reason" class="block text-left">Reason for Contact</label>
+        <select id="reason" class="w-full p-2 border">
+          <option value="">Select a reason</option>
+          <option value="support">Support</option>
+          <option value="feedback">Feedback</option>
+          <option value="inquiry">Inquiry</option>
+        </select>
+      </div>
+      <div>
+        <label for="message" class="block text-left">Message</label>
+        <textarea id="message" rows="4" class="w-full p-2 border"></textarea>
+      </div>
+      <button type="submit" class="w-full p-2 bg-blue-500 text-white font-semibold">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="py-4 bg-gray-800 text-gray-100 text-center">
+    <p class="max-w-2xl mx-auto text-sm"></p>
+  </footer>
+
+  <script>
+    // Text samples
+    const texts = {
+  landing: `Welcome to our platform! Here, you will find a broad selection of services and products, designed to meet diverse needs and exceed expectations. Our platform is built on the principle of innovation, aiming to constantly evolve and improve in response to the ever-changing demands of the modern world. We are passionate about quality and committed to delivering exceptional value to our users. From our carefully curated products to our wide range of services, each aspect of our platform is tailored with precision and purpose. We invite you to explore the many features and benefits we offer. Our catalog includes an array of items, from tech gadgets to everyday essentials, each selected with a focus on reliability and performance. Additionally, our services are crafted to support you at every stage, whether you're looking for expert guidance, seamless transactions, or personalized assistance. We believe that customer satisfaction is paramount, and we are here to ensure a smooth, enjoyable experience for every visitor. Our platform is not just a marketplace; it’s a community where innovation meets excellence. We prioritize transparency, aiming to foster trust through clear communication and dedicated support. Join us as we continue to grow, pushing the boundaries of what’s possible and setting new standards in the industry. Welcome aboard, and prepare to discover a world of opportunities!`,
+
+  blog1: `In today's dynamic world, staying informed is more crucial than ever. Trends come and go, but the knowledge we gain can last a lifetime. In this blog, we explore the significance of understanding current trends, not just for personal growth but for achieving professional success. Technology is reshaping industries, and new methods of communication are emerging, making it essential to stay adaptable. Whether you’re a seasoned professional or just starting out, keeping up with changes can empower you to make informed decisions. We delve into strategies for effective learning and continuous improvement, as well as the importance of remaining curious and open-minded. Networking plays a key role in staying current, too, as building connections can expose you to new perspectives. We also discuss the value of critical thinking and how it enables us to evaluate trends objectively, allowing for better strategic planning. In this fast-paced environment, learning is a lifelong journey, and our goal is to support you with insights and tools to help you stay ahead. Embrace the change, leverage the resources available, and become a thought leader in your field!`,
+
+  blog2: `Every project begins with an idea. This simple notion is at the heart of innovation and drives the advancements we see in technology today. In the world of development, ideas evolve from concepts into solutions that can impact millions of people. But turning an idea into reality is no small feat—it requires creativity, determination, and often a team of dedicated professionals working in harmony. In this post, we explore the journey of an idea from inception to completion. We discuss the early stages of brainstorming, where raw concepts are shaped and refined. Then comes the planning phase, where goals are set, timelines are established, and resources are allocated. Implementation is where the magic happens, with developers, designers, and project managers collaborating to bring the vision to life. Along the way, challenges arise, but with each hurdle, teams learn and adapt. Finally, we touch on the importance of feedback and iteration, which allow a project to reach its full potential. This cycle of ideation, execution, and refinement is what fuels innovation and drives progress in our fast-evolving world.`,
+
+  catalog: `Explore our top-notch product catalog! Each item is carefully selected to ensure it meets our high standards of quality, reliability, and innovation. Our catalog features a diverse array of products designed to serve a wide range of needs. From the latest in tech gadgets, offering cutting-edge functionality and sleek design, to everyday household items crafted to enhance convenience, our selection is tailored to modern lifestyles. We pride ourselves on sourcing products that are both affordable and durable, giving you peace of mind with every purchase. Our team conducts thorough testing and evaluation before a product makes its way into our catalog. You’ll find items suitable for professionals, students, families, and enthusiasts alike, each chosen with the intention of adding value to your life. Additionally, we are constantly updating our offerings, so be sure to check back often for new arrivals. We invite you to browse, discover, and experience the difference that quality products can make. Shopping with us isn’t just about buying; it’s about choosing items that support your daily routines and goals. Dive into our catalog and find the products that resonate with your needs!`,
+
+  footer: `Thank you for visiting our platform. At the heart of everything we do is a commitment to excellence and a passion for serving our customers. We understand that your satisfaction is essential to our success, and we strive to provide a seamless, enjoyable experience. From the moment you explore our offerings to the final stages of your journey with us, we are here to support you. Our team is dedicated to maintaining high standards and delivering value in every interaction. Should you have any questions, concerns, or feedback, we are just a message away. We value transparency, and our goal is to build lasting relationships based on trust and mutual respect. Your experience with us is not limited to a transaction; it is an invitation to join a community where customer care and quality are paramount. We hope you have enjoyed navigating our platform and found everything you were looking for. Thank you once again for choosing us. We look forward to continuing to serve you and exceed your expectations. Safe travels as you explore all that we have to offer!`
+};
+
+
+    // Apply word wrapping with background colors
+    function applyWordWrap(text) {
+      const words = text.split(" ");
+      return words.map((word, i) => `<span class="bg-color-${(i % 5) + 1}">${word}</span>`).join(" ");
+    }
+
+    document.querySelector("section p").innerHTML = applyWordWrap(texts.landing);
+    document.querySelectorAll("section article p").forEach((el, idx) => {
+      el.innerHTML = applyWordWrap(texts[`blog${idx + 1}`]);
+    });
+    document.querySelectorAll("section .grid .p-4 p").forEach((el) => {
+      el.innerHTML = applyWordWrap(texts.catalog);
+    });
+    document.querySelector("footer p").innerHTML = applyWordWrap(texts.footer);
+  </script>
+
+
+
+<script>var sitetran = { site_id: 2213 };</script>
+<script src="//c.sitetran.com/widget/v3.js"></script>
+<div id="sitetran_translate_element"></div>
+
+<!-- <script type="module" src="../dist/main.js"></script>
+
+ -->
+
+</body>
 </html>
-
